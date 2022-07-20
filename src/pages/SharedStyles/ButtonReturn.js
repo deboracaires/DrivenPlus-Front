@@ -9,6 +9,7 @@ const ButtonReturn = styled.button`
   font-family: 'Roboto';
   font-size: 14px;
   font-weight: 400;
+  letter-spacing: 1px;
   :hover {
     cursor: pointer;
   }
