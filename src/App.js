@@ -1,9 +1,14 @@
 import GlobalStyled from './GlobalStyles/GlobalStyle';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import SignupPage from './pages/SignupPage/SignupPage';
 
 export default function App() {
   return (
-    <div>
+    <BrowserRouter>
       <GlobalStyled />
-    </div>
+      <Routes>
+        <Route path='/' element={<SignupPage />}/> 
+      </Routes>
+    </BrowserRouter>
   );
 }
