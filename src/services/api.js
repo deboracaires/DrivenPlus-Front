@@ -5,6 +5,10 @@ dotenv.config();
 
 const BASE_URL = process.env.REACT_APP_URL;
 
+function createConfig(token) {
+  return { headers: { 'Authorization': `Bearer ${token}` } };
+}
+
 async function postNewUser(body) {
   await axios.post(`${BASE_URL}/auth/sign-up`, body);
 }
@@ -13,7 +17,13 @@ async function signIn(body) {
   return await axios.post(`${BASE_URL}/auth/login`, body);
 }
 
+async function getSubscriptions(token) {
+  const config = createConfig(token);
+  return await axios.get(`${BASE_URL}/subscriptions/memberships`, config);
+}
+
 const api = {
+  getSubscriptions,
   postNewUser,
   signIn,
 };

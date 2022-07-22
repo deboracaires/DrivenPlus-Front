@@ -26,7 +26,7 @@ export default function SigninPage() {
       else
         navigate('/home');
     }
-  }, []);
+  }, [auth, navigate]);
 
   const handleChange = (prop) => (event) => {
     setValues({...values, [prop]: event.target.value});
