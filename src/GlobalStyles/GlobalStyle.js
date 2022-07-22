@@ -11,6 +11,10 @@ const GlobalStyled = createGlobalStyle`
         height: 100vh;
         background-color: #0E0E13;
     }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
     @media(max-width: 630px) {
   overflow-x: hidden !important;
 }

@@ -1,8 +1,10 @@
 import Logo from '../../components/Logo/Logo';
 import { Container } from './Styleds';
 import { ButtonReturn, ButtonSend, Input } from '../SharedStyles';
+import { useNavigate } from 'react-router-dom';
 
 export default function SigninPage() {
+  const navigate = useNavigate();
   return (
     <Container>
       <Logo />
@@ -13,7 +15,7 @@ export default function SigninPage() {
         placeholder='Senha'
       ></Input>
       <ButtonSend>ENTRAR</ButtonSend>
-      <ButtonReturn>Não possui conta? Cadastre-se</ButtonReturn>  
+      <ButtonReturn onClick={() => navigate('sign-up')}>Não possui conta? Cadastre-se</ButtonReturn>  
     </Container>
   );
 }
