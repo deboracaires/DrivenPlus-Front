@@ -9,8 +9,13 @@ async function postNewUser(body) {
   await axios.post(`${BASE_URL}/auth/sign-up`, body);
 }
 
+async function signIn(body) {
+  return await axios.post(`${BASE_URL}/auth/login`, body);
+}
+
 const api = {
   postNewUser,
+  signIn,
 };
 
 export default api;

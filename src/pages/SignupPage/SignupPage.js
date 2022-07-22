@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import api from '../../services/api';
 import { SignUpDataValidation } from '../../validations/SignUpDataValidation';
+import showError from '../../modals/SignUpError';
 
 export default function SignupPage() {
   const [values, setValues] = useState({
@@ -30,7 +31,7 @@ export default function SignupPage() {
       SignUpSucess();
       navigate('/');
     } catch (err) {
-      console.log(err);
+      showError(err.response.status);
     }
   }
 
