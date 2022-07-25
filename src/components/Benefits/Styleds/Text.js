@@ -12,6 +12,7 @@ const Text = styled.div `
     line-height: 19px;
     color: #FFFFFF;
   }
+  margin: 10px 0 10px 0;
 `;
 
 export default Text;

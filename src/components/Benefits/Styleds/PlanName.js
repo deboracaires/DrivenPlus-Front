@@ -7,7 +7,7 @@ const PlanName = styled.h1 `
   font-size: 32px;
   line-height: 38px;
   color: #FFFFFF;
-  margin: 12px 0 23px 106px;
+  margin: 12px 0 13px 0;
 `;
 
 export default PlanName;

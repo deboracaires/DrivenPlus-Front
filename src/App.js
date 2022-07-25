@@ -4,7 +4,7 @@ import SigninPage from './pages/SigninPage/SigninPage';
 import SignupPage from './pages/SignupPage/SignupPage';
 import { AuthProvider } from './contexts/AuthContext';
 import SubscriptionsPage from './pages/SubscriptionsPage/SubscriptionsPage';
-import SubscriptionDataPage from './pages/SubscriptionDataPage.js/SubscriptionDataPage';
+import SubscriptionDataPage from './pages/SubscriptionDataPage/SubscriptionDataPage';
 
 export default function App() {
   return (

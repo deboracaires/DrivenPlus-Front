@@ -3,15 +3,14 @@ import { useNavigate, useParams } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import api from '../../services/api';
 import { AiOutlineArrowLeft } from "react-icons/ai";
-import { BsFileText  } from "react-icons/bs";
-import { Container, ContainerPerks, Image, PlanName, ReturnArrow, Text} from './Styleds';
+import { Container, LoadingData, ReturnArrow} from './Styleds';
+import Benefits from '../../components/Benefits/Benefits';
 
 export default function SubscriptionDataPage() {
   const [planData, setPlanData] = useState([]);
   const { idSubscription } = useParams('/subscription/:idSubscription');
   
   const { auth } = useAuth();
-  console.log(planData);
 
   const navigate = useNavigate();
 
@@ -22,20 +21,22 @@ export default function SubscriptionDataPage() {
         setPlanData(res.data);
       })
 
-  }, [auth, navigate]);
+  }, [auth, navigate, idSubscription]);
   return(
     <Container>
       <ReturnArrow onClick={() => navigate('/subscriptions')}>
         <AiOutlineArrowLeft color='#fff' size='28px'/>
       </ReturnArrow>
-      <Image src={planData.image} alt=''/>
-      <PlanName>{planData.name}</PlanName>
-      <ContainerPerks>
-        <Text>
-          <BsFileText color='#FF4791' size='16px'/>
-          <h1>Benefícios: </h1>
-        </Text>
-      </ContainerPerks>
+      {
+        planData.length === 0 ?
+        (
+          <LoadingData> Carregando... </LoadingData>
+        )
+        :
+        (
+          <Benefits planData={planData}/>
+        )
+      }
     </Container>
   );
 }
