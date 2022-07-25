@@ -5,6 +5,7 @@ import api from '../../services/api';
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { Container, LoadingData, ReturnArrow} from './Styleds';
 import Benefits from '../../components/Benefits/Benefits';
+import CardData from '../../components/CardData/CardData';
 
 export default function SubscriptionDataPage() {
   const [planData, setPlanData] = useState([]);
@@ -35,6 +36,16 @@ export default function SubscriptionDataPage() {
         :
         (
           <Benefits planData={planData}/>
+        )
+      }
+      {
+        planData.length === 0 ?
+        (
+          true
+        )
+        :
+        (
+          <CardData />
         )
       }
     </Container>
