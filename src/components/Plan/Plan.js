@@ -7,7 +7,7 @@ export default function Plan({ subscription }) {
     <Container onClick={() => navigate(`/subscriptions/${subscription.id}`)}>
       <Image src={subscription.image} alt=''/>
       <Price>
-        <h1>R${subscription.price}</h1>
+        <h1>{Number(subscription.price).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</h1>
       </Price>
     </Container>
   )

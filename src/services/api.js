@@ -27,10 +27,16 @@ async function getSubscriptionDataById(token, idSubscription) {
   return await axios.get(`${BASE_URL}/subscriptions/memberships/${idSubscription}`, config);
 }
 
+async function postSubscription(token, body) {
+  const config = createConfig(token);
+  return await axios.post(`${BASE_URL}/subscriptions`, body, config);
+}
+
 const api = {
   getSubscriptions,
   getSubscriptionDataById,
   postNewUser,
+  postSubscription,
   signIn,
 };
 
