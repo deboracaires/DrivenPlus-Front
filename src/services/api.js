@@ -32,7 +32,13 @@ async function postSubscription(token, body) {
   return await axios.post(`${BASE_URL}/subscriptions`, body, config);
 }
 
+async function deleteSubscription(token) {
+  const config = createConfig(token);
+  return await axios.delete(`${BASE_URL}/subscriptions`, config);
+}
+
 const api = {
+  deleteSubscription,
   getSubscriptions,
   getSubscriptionDataById,
   postNewUser,

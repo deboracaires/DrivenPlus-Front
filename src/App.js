@@ -5,6 +5,7 @@ import SignupPage from './pages/SignupPage/SignupPage';
 import { AuthProvider } from './contexts/AuthContext';
 import SubscriptionsPage from './pages/SubscriptionsPage/SubscriptionsPage';
 import SubscriptionDataPage from './pages/SubscriptionDataPage/SubscriptionDataPage';
+import Home from './pages/Home/Home';
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
           <Route path='/sign-up' element={<SignupPage />}/>
           <Route path='/subscriptions' element={<SubscriptionsPage />}/>
           <Route path='/subscriptions/:idSubscription' element={<SubscriptionDataPage />} />
+          <Route path='/home' element={<Home />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>
